@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Apache Kafka AVRO Demo</title>
+</head>
+<body>
+    <h1>
+        Apache Kafka AVRO Demo
+    </h1>
+    <h2>
+        Create Customer
+    </h2>
+    <form action="#" th:action="@{/create}" th:object="${customer}" method="post">
+        <p>
+            <label for="customer-first-name">First name:</label><br>
+            <input id="customer-first-name" th:field="*{firstName}" type="text" required="required">
+        </p>
+        <p>
+            <label for="customer-last-name">Last name:</label><br>
+            <input id="customer-last-name" th:field="*{lastName}" type="text" required="required">
+        </p>
+        <p>
+            <label for="customer-age">Age:</label><br>
+            <input id="customer-age" th:field="*{age}" type="number">
+        </p>
+        <p>
+            <label for="customer-height">Height (cm):</label><br>
+            <input id="customer-height" th:field="*{height}" type="number" step="0.01">
+        </p>
+        <p>
+            <label for="customer-weight">Weight (kg):</label><br>
+            <input id="customer-weight" th:field="*{weight}" type="number" step="0.01">
+        </p>
+        <p>
+            <button type="submit">Create</button>
+        </p>
+    </form>
+    <p>
+        <a href="/">Go back</a>
+    </p>
+</body>
+</html>

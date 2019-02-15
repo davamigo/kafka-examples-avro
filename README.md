@@ -2,6 +2,55 @@
 
 **GitHub**: [davamigo/kafka-examples-avro](https://github.com/davamigo/kafka-examples-avro)
 
+## AVRO contracts
+
+### Customer
+
+The customer is published into a Kafka topic using the Customer AVRO contract.
+
+```
+{
+  "type": "record",
+  "namespace": "com.privalia.poc.avrodemo.avro",
+  "name": "Customer",
+  "fields": [
+    {
+      "name": "uuid",
+      "type": "string",
+      "doc": "The unique identifier of the customer"
+    },
+    {
+      "name": "first_name",
+      "type": "string",
+      "doc": "First name of the customer"
+    },
+    {
+      "name": "last_name",
+      "type": "string",
+      "doc": "Last name of the customer"
+    },
+    {
+      "name": "age",
+      "type": [ "null", "int" ],
+      "default": null,
+      "doc": "Age at the time of registration"
+    },
+    {
+      "name": "height",
+      "type": [ "null", "float" ],
+      "default": null,
+      "doc": "Height at the time of registration in cm"
+    },
+    {
+      "name": "weight",
+      "type": [ "null", "float" ],
+      "default": null,
+      "doc": "Weight at the time of registration in kg"
+    }
+  ]
+}
+```
+
 ## Development
 
 ### Docker
