@@ -1,0 +1,63 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("com.commercehub.gradle.plugin:gradle-avro-plugin:0.14.0")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+// Avro model classes generation
+apply plugin: "com.commercehub.gradle.plugin.avro"
+
+avro {
+    stringType = "String"
+    createSetters = true
+    enableDecimalLogicalType = true
+    fieldVisibility = "private"
+}
+
+group = 'com.privalia.poc'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+ext {
+    avroVersion = '1.8.2'
+    kafkaAvroToolsVersion = '4.0.0'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        // kafka-schema-registry
+        url "https://packages.confluent.io/maven/"
+    }
+}
+
+dependencies {
+    // Spring Boot
+    compile('org.springframework.boot:spring-boot-starter')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+
+    // Kafka
+    compile('org.springframework.kafka:spring-kafka')
+
+    // Avro
+    compile("org.apache.avro:avro:${avroVersion}")
+    compile("io.confluent:kafka-avro-serializer:${kafkaAvroToolsVersion}")
+
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.kafka:spring-kafka-test')
+}
