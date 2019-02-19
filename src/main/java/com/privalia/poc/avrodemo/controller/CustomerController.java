@@ -20,8 +20,8 @@ import java.util.concurrent.ExecutionException;
  * @author david.amigo
  */
 @Controller
-@RequestMapping("/customers/v1")
-public class CustomerV1Controller {
+@RequestMapping("/customers")
+public class CustomerController {
 
     /** The Kafka AVRO customers producer */
     private CustomerKafkaAvroProducer customerKafkaAvroProducer;
@@ -36,7 +36,7 @@ public class CustomerV1Controller {
      * @param customerRepository        the customers repository
      */
     @Autowired
-    public CustomerV1Controller(
+    public CustomerController(
             CustomerKafkaAvroProducer customerKafkaAvroProducer,
             CustomerRepository customerRepository
     ) {
@@ -54,7 +54,7 @@ public class CustomerV1Controller {
     public String loistCustomersAction(Model model) {
         Collection<Customer> customers = customerRepository.findAll();
         model.addAttribute("customers", customers);
-        return "customers-v1/list";
+        return "customers/list";
     }
 
     /**
@@ -68,7 +68,7 @@ public class CustomerV1Controller {
     public String showCustomerAction(Model model, @PathVariable("id") String id) {
         Customer customer = customerRepository.find(id);
         model.addAttribute("customer", customer);
-        return "customers-v1/view";
+        return "customers/view";
     }
 
     /**
@@ -80,7 +80,7 @@ public class CustomerV1Controller {
     @GetMapping("/create")
     public String createCustomerAction(Model model) {
         model.addAttribute("customer", new Customer());
-        return "customers-v1/create";
+        return "customers/create";
     }
 
     /**
@@ -100,6 +100,6 @@ public class CustomerV1Controller {
         } catch (ExecutionException | InterruptedException exc) {
             exc.printStackTrace();
         }
-        return new ModelAndView("redirect:/customers/v1");
+        return new ModelAndView("redirect:/customers");
     }
 }

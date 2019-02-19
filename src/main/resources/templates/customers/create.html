@@ -12,7 +12,7 @@
     <h2>
         Create Customer
     </h2>
-    <form action="#" th:action="@{/customers/v1/create}" th:object="${customer}" method="post">
+    <form action="#" th:action="@{/customers/create}" th:object="${customer}" method="post">
         <p>
             <label for="customer-first-name">First name:</label><br>
             <input id="customer-first-name" th:field="*{firstName}" type="text" required="required">
@@ -39,7 +39,7 @@
     </form>
     <hr>
     <p>
-        <a th:href="@{/customers/v1}">Go back</a>
+        <a th:href="@{/customers}">Go back</a>
     </p>
 </body>
 </html>
