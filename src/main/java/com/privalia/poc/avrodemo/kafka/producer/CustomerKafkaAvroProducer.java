@@ -12,6 +12,8 @@ import java.util.concurrent.ExecutionException;
 
 /**
  * Component for sending customers to a Kafka topic
+ *
+ * @author david.amigo
  */
 @Component
 public class CustomerKafkaAvroProducer {
@@ -22,7 +24,7 @@ public class CustomerKafkaAvroProducer {
     private final KafkaTemplate<String, Customer> producerTemplate;
 
     /**
-     * Autowired construcotr
+     * Autowired constructor
      *
      * @param producerTemplate the Kafka template for producing messages
      */
