@@ -34,6 +34,14 @@
             <input id="customer-weight" th:field="*{weight}" type="number" step="0.01">
         </p>
         <p>
+            <label for="customer-phone">Phone number:</label><br>
+            <input id="customer-phone" th:field="*{phone}" type="text">
+        </p>
+        <p>
+            <label for="customer-email">Email address:</label><br>
+            <input id="customer-email" th:field="*{email}" type="email">
+        </p>
+        <p>
             <button type="submit">Create</button>
         </p>
     </form>

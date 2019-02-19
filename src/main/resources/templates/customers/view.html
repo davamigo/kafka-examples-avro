@@ -34,6 +34,14 @@
         Weight:
         <strong th:text="${customer.weight} ? ${customer.weight} : '~'"></strong>
     </p>
+    <p>
+        Phone number:
+        <strong th:text="${customer.phone} ? ${customer.phone} : '~'"></strong>
+    </p>
+    <p>
+        Email address:
+        <strong th:text="${customer.email} ? ${customer.email} : '~'"></strong>
+    </p>
     <hr>
     <p>
         <a th:href="@{/customers}">Go back</a>

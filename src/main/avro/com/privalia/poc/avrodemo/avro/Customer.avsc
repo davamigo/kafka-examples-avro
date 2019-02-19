@@ -2,6 +2,7 @@
   "type": "record",
   "namespace": "com.privalia.poc.avrodemo.avro",
   "name": "Customer",
+  "version": "2",
   "fields": [
     {
       "name": "uuid",
@@ -35,6 +36,18 @@
       "type": [ "null", "float" ],
       "default": null,
       "doc": "Weight at the time of registration in kg"
+    },
+    {
+      "name": "phone",
+      "type": [ "null", "string" ],
+      "default": null,
+      "doc": "Phone number"
+    },
+    {
+      "name": "email",
+      "type": [ "null", "string" ],
+      "default": null,
+      "doc": "Email address"
     }
   ]
 }
