@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Apache Kafka AVRO Demo</title>
+</head>
+<body>
+    <h1>
+        Apache Kafka AVRO Demo
+    </h1>
+    <hr>
+    <h2>
+        Customers list
+    </h2>
+    <ul th:if="${not #lists.isEmpty(customers)}">
+        <li th:each="customer: ${customers}">
+            <a th:href="@{/customers/v1/{id}(id=${customer.uuid})}">
+                <span th:text="${customer.firstName}"></span>
+                <span th:text="${customer.lastName}"></span>
+            </a>
+        </li>
+    </ul>
+    <p th:if="${#lists.isEmpty(customers)}">
+        No customers found!
+    </p>
+    <hr>
+    <p>
+        <a th:href="@{/customers/v1/create}">Create customer</a>
+    </p>
+</body>
+</html>

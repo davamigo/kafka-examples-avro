@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Apache Kafka AVRO Demo</title>
+</head>
+<body>
+    <h1>
+        Apache Kafka AVRO Demo
+    </h1>
+    <hr>
+    <h2>
+        Customer
+        <span th:text="${customer.firstName}"></span>
+        <span th:text="${customer.lastName}"></span>
+    </h2>
+    <p>
+        First name:
+        <strong th:text="${customer.firstName}"></strong>
+    </p>
+    <p>
+        Last name:
+        <strong th:text="${customer.lastName}"></strong>
+    </p>
+    <p>
+        Age:
+        <strong th:text="${customer.age} ? ${customer.age} : '~'"></strong>
+    </p>
+    <p>
+        Height:
+        <strong th:text="${customer.height} ? ${customer.height} : '~'"></strong>
+    </p>
+    <p>
+        Weight:
+        <strong th:text="${customer.weight} ? ${customer.weight} : '~'"></strong>
+    </p>
+    <hr>
+    <p>
+        <a th:href="@{/customers/v1}">Go back</a>
+    </p>
+</body>
+</html>

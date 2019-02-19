@@ -8,10 +8,11 @@
     <h1>
         Apache Kafka AVRO Demo
     </h1>
+    <hr>
     <h2>
         Create Customer
     </h2>
-    <form action="#" th:action="@{/create}" th:object="${customer}" method="post">
+    <form action="#" th:action="@{/customers/v1/create}" th:object="${customer}" method="post">
         <p>
             <label for="customer-first-name">First name:</label><br>
             <input id="customer-first-name" th:field="*{firstName}" type="text" required="required">
@@ -36,8 +37,9 @@
             <button type="submit">Create</button>
         </p>
     </form>
+    <hr>
     <p>
-        <a href="/">Go back</a>
+        <a th:href="@{/customers/v1}">Go back</a>
     </p>
 </body>
 </html>
