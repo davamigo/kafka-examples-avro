@@ -26,18 +26,6 @@
       "doc": "Age at the time of registration"
     },
     {
-      "name": "height",
-      "type": [ "null", "float" ],
-      "default": null,
-      "doc": "Height at the time of registration in cm"
-    },
-    {
-      "name": "weight",
-      "type": [ "null", "float" ],
-      "default": null,
-      "doc": "Weight at the time of registration in kg"
-    },
-    {
       "name": "phone",
       "type": [ "null", "string" ],
       "default": null,
