@@ -9,7 +9,7 @@ import java.util.Collection;
  * @param <V> the value class
  * @author david.amigo
  */
-public interface RepositoryInterface<K,V> {
+public interface RepositoryInterface<K, V> {
 
     /**
      * Finds a value by key

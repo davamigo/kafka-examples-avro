@@ -5,38 +5,38 @@
     <title>Apache Kafka AVRO Demo</title>
 </head>
 <body>
-    <h1>
-        Apache Kafka AVRO Demo
-    </h1>
-    <hr>
-    <h2>
-        Customer
-        <span th:text="${customer.firstName}"></span>
-        <span th:text="${customer.lastName}"></span>
-    </h2>
-    <p>
-        First name:
-        <strong th:text="${customer.firstName}"></strong>
-    </p>
-    <p>
-        Last name:
-        <strong th:text="${customer.lastName}"></strong>
-    </p>
-    <p>
-        Age:
-        <strong th:text="${customer.age} ? ${customer.age} : '~'"></strong>
-    </p>
-    <p>
-        Phone number:
-        <strong th:text="${customer.phone} ? ${customer.phone} : '~'"></strong>
-    </p>
-    <p>
-        Email address:
-        <strong th:text="${customer.email} ? ${customer.email} : '~'"></strong>
-    </p>
-    <hr>
-    <p>
-        <a th:href="@{/customers}">Go back</a>
-    </p>
+<h1>
+    Apache Kafka AVRO Demo
+</h1>
+<hr>
+<h2>
+    Customer
+    <span th:text="${customer.firstName}"></span>
+    <span th:text="${customer.lastName}"></span>
+</h2>
+<p>
+    First name:
+    <strong th:text="${customer.firstName}"></strong>
+</p>
+<p>
+    Last name:
+    <strong th:text="${customer.lastName}"></strong>
+</p>
+<p>
+    Age:
+    <strong th:text="${customer.age} ? ${customer.age} : '~'"></strong>
+</p>
+<p>
+    Phone number:
+    <strong th:text="${customer.phone} ? ${customer.phone} : '~'"></strong>
+</p>
+<p>
+    Email address:
+    <strong th:text="${customer.email} ? ${customer.email} : '~'"></strong>
+</p>
+<hr>
+<p>
+    <a th:href="@{/customers}">Go back</a>
+</p>
 </body>
 </html>

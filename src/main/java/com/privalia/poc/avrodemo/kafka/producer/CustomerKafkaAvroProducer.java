@@ -36,12 +36,12 @@ public class CustomerKafkaAvroProducer {
     /**
      * Publishes a customer to a topic
      *
-     * @param topic the name of the topic
+     * @param topic    the name of the topic
      * @param customer the customer data
      * @return the result
      * @throws CancellationException if the computation was cancelled
-     * @throws ExecutionException if the computation threw an exception
-     * @throws InterruptedException if the current thread was interrupted
+     * @throws ExecutionException    if the computation threw an exception
+     * @throws InterruptedException  if the current thread was interrupted
      */
     public SendResult<String, Customer> send(String topic, Customer customer) throws ExecutionException, InterruptedException {
         String key = customer.getUuid();

@@ -5,41 +5,41 @@
     <title>Apache Kafka AVRO Demo</title>
 </head>
 <body>
-    <h1>
-        Apache Kafka AVRO Demo
-    </h1>
-    <hr>
-    <h2>
-        Create Customer
-    </h2>
-    <form action="#" th:action="@{/customers/create}" th:object="${customer}" method="post">
-        <p>
-            <label for="customer-first-name">First name:</label><br>
-            <input id="customer-first-name" th:field="*{firstName}" type="text" required="required">
-        </p>
-        <p>
-            <label for="customer-last-name">Last name:</label><br>
-            <input id="customer-last-name" th:field="*{lastName}" type="text" required="required">
-        </p>
-        <p>
-            <label for="customer-age">Age:</label><br>
-            <input id="customer-age" th:field="*{age}" type="number">
-        </p>
-        <p>
-            <label for="customer-phone">Phone number:</label><br>
-            <input id="customer-phone" th:field="*{phone}" type="text">
-        </p>
-        <p>
-            <label for="customer-email">Email address:</label><br>
-            <input id="customer-email" th:field="*{email}" type="email">
-        </p>
-        <p>
-            <button type="submit">Create</button>
-        </p>
-    </form>
-    <hr>
+<h1>
+    Apache Kafka AVRO Demo
+</h1>
+<hr>
+<h2>
+    Create Customer
+</h2>
+<form action="#" th:action="@{/customers/create}" th:object="${customer}" method="post">
     <p>
-        <a th:href="@{/customers}">Go back</a>
+        <label for="customer-first-name">First name:</label><br>
+        <input id="customer-first-name" th:field="*{firstName}" type="text" required="required">
     </p>
+    <p>
+        <label for="customer-last-name">Last name:</label><br>
+        <input id="customer-last-name" th:field="*{lastName}" type="text" required="required">
+    </p>
+    <p>
+        <label for="customer-age">Age:</label><br>
+        <input id="customer-age" th:field="*{age}" type="number">
+    </p>
+    <p>
+        <label for="customer-phone">Phone number:</label><br>
+        <input id="customer-phone" th:field="*{phone}" type="text">
+    </p>
+    <p>
+        <label for="customer-email">Email address:</label><br>
+        <input id="customer-email" th:field="*{email}" type="email">
+    </p>
+    <p>
+        <button type="submit">Create</button>
+    </p>
+</form>
+<hr>
+<p>
+    <a th:href="@{/customers}">Go back</a>
+</p>
 </body>
 </html>
